@@ -20,13 +20,25 @@ const Footer = () => {
               بمختلف مراحلهم العمرية.
             </p>
             <div className="flex w-[200px] justify-evenly mx-auto">
-              <a className="text-white text-4xl hover:text-[#3d1df0] " href="#">
+              <a
+                className="text-white text-4xl hover:text-[#3d1df0] "
+                target="_blank"
+                href="https://www.facebook.com/xzenhom"
+              >
                 <AiFillFacebook />
               </a>
-              <a className="text-white text-4xl hover:text-[#1d9bf0] " href="#">
+              <a
+                className="text-white text-4xl hover:text-[#1d9bf0] "
+                target="_blank"
+                href="https://twitter.com/MAD_ZENHOM"
+              >
                 <AiFillTwitterSquare />
               </a>
-              <a className="text-white text-4xl hover:text-[#f01db1] " href="#">
+              <a
+                className="text-white text-4xl hover:text-[#f01db1] "
+                target="_blank"
+                href="https://www.instagram.com/mahmouud_zenhom/"
+              >
                 <AiFillInstagram />
               </a>
             </div>
@@ -44,7 +56,11 @@ const Footer = () => {
       </div>
       <div className="flex md:flex-col md:text-center justify-around pt-10 md:py-5 font-bold">
         <h2>حقوق الطبع والنشر محفوظة ©</h2>
-        <a href="/" className="uppercase">
+        <a
+          href="https://www.instagram.com/mahmouud_zenhom/"
+          target="_blank"
+          className="uppercase"
+        >
           Zenhom
         </a>
       </div>

@@ -8,7 +8,7 @@ const Intro = (props) => {
   return (
     <section
       ref={ref}
-      className={`${props.high} md:h-auto bg-IntroImg bg-cover `}
+      className={`${props.high} md:h-auto bg-IntroImg bg-cover`}
     >
       <div
         style={{
