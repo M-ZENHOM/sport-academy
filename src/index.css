@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .navLink{
+        @apply relative md:text-black before:content-[''] before:absolute md:before:bottom-[-8px] before:bottom-[-5px] before:bg-myOrange-900 before:w-0 before:h-[2px] before:right-0 before:transition-all before:duration-700;
+    }
+    .navLink.active {
+        @apply before:w-full;
+    }
+    .swiper .swiper-pagination {
+        position: relative;
+        top: 10px;
+    }
+    .swiper .swiper-pagination-bullet-active {
+        background-color: #541554;
+        transform: scale(1.5);
+        transition: 0.5s;
+    }
+}
+
+@layer base {
+    #root {
+        font-family: 'Tajawal', sans-serif;
+        scroll-behavior: smooth;
+    }
+  }
