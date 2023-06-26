@@ -1,4 +1,4 @@
-﻿# - 📌 SPORT ACADEMY
+# - 📌 SPORT ACADEMY
 
 # - Demo Link 🎊:
 
