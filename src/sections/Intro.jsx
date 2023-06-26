@@ -19,10 +19,10 @@ const Intro = (props) => {
         className={`flex md:flex-col justify-center items-center ${props.padding} md:pt-40  mx-auto w-5/6 text-center`}
       >
         <div className="md:order-2 pb-10">
-          <h2 className="text-myOrange-900 text-5xl md:text-3xl">
+          <h2 className="text-myOrange-900 text-7xl md:text-3xl">
             {props.title}
           </h2>
-          <p className="w-[500px] md:w-72 text-2xl md:text-xl text-white my-10">
+          <p className="w-[600px] md:w-72 text-4xl md:text-xl text-white my-10">
             {props.des}
           </p>
           <Link to="/" className="bg-white p-5 rounded-xl text-pur-900">

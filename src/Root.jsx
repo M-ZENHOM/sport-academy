@@ -10,6 +10,7 @@ import "./index.css";
 
 const Root = () => {
   const [loading, setloading] = useState(false);
+  // fake loading
   useEffect(() => {
     setloading(true);
     setTimeout(() => {

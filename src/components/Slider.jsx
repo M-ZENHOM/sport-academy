@@ -4,12 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import goverImg from "../assets/goverment.jpg";
-import KidsArea from "../assets/KidsArea.jpg";
-import Mo2tmarat from "../assets/Mo2tmarat.jpg";
-import msgad from "../assets/msgad.jpg";
 import Slide from "./Slide";
 import { useInView } from "framer-motion";
+import { siteConfig } from "../config/site";
 
 const Slider = () => {
   const ref = useRef(null);
@@ -50,50 +47,11 @@ const Slider = () => {
       modules={[Autoplay, FreeMode, Pagination]}
       className="mySwiper w-5/6  sm:mx-auto pb-10"
     >
-      <SwiperSlide>
-        <Slide
-          title="المبني الحكومي"
-          des="  مبني يقدم خدمات السجل المدني والتسجيل العقاري ومكتب الأستثمارات
-            لأعضاء سيتي كلوب"
-          img={goverImg}
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide
-          title="منطقة الاطفال"
-          des=" منطقة مجهزة بأفضل الألعاب ومؤمنة تماماً للعب أطفالنا في سعادة وأمان "
-          img={KidsArea}
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide
-          title="قاعة المؤتمرات "
-          des="قاعة مجهزة بأفضل المعدات الصوتية والبصرية وبأفضل تكنولوجيا عالمية لتنظيم مؤتمرات دولية ومحلية."
-          img={Mo2tmarat}
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide
-          title="المسجد"
-          des="متاح لكل الاعضاء في كل الصلوات"
-          img={msgad}
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide
-          title="قاعة المؤتمرات "
-          des="قاعة مجهزة بأفضل المعدات الصوتية والبصرية وبأفضل تكنولوجيا عالمية لتنظيم مؤتمرات دولية ومحلية."
-          img={Mo2tmarat}
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide
-          title="المبني الحكومي"
-          des="  مبني يقدم خدمات السجل المدني والتسجيل العقاري ومكتب الأستثمارات
-            لأعضاء سيتي كلوب"
-          img={goverImg}
-        />
-      </SwiperSlide>
+      {siteConfig.Services.map((s, i) => (
+        <SwiperSlide key={i}>
+          <Slide title={s.title} des={s.desc} img={s.img} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };

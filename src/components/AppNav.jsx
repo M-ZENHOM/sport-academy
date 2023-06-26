@@ -2,6 +2,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { FaRegWindowClose } from "react-icons/fa";
+import { siteConfig } from "../config/site";
 
 const AppNav = () => {
   const [open, setOpen] = useState(false);
@@ -24,26 +25,19 @@ const AppNav = () => {
       style={{ direction: "rtl" }}
     >
       <div className="md:hidden flex w-5/6 justify-between items-center text-xl mx-auto">
-        <Link className="text-2xl">اكاديمية الشباب</Link>
+        <Link className="text-2xl">{siteConfig.name}</Link>
         <nav className="space-x-[20px]">
-          <NavLink to="/" className="navLink mx-[20px] ">
-            الرئيسية
-          </NavLink>
-          <NavLink to="/عن-النادي" className="navLink">
-            عن النادي
-          </NavLink>
-          <NavLink to="/الانشطة-الرياضية" className="navLink">
-            الانشطة الرياضية
-          </NavLink>
-          <NavLink to="/تواصل-معنا" className="navLink">
-            تواصل معنا
-          </NavLink>
+          {siteConfig.mainNav.map((n, i) => (
+            <NavLink key={i} to={n.href} className="navLink mx-[20px] ">
+              {n.title}
+            </NavLink>
+          ))}
         </nav>
       </div>
 
       {/* Mobile Nav */}
       <div className="hidden md:flex w-5/6 justify-between items-center text-xl mx-auto">
-        <Link className="text-2xl">اكاديمية الشباب</Link>
+        <Link className="text-2xl">{siteConfig.name}</Link>
         {!open ? (
           <AiOutlineMenu
             className="hidden md:block text-3xl cursor-pointer"
@@ -60,18 +54,11 @@ const AppNav = () => {
             open ? "top-[71px]" : "top-[-300px]"
           } left-0 h-[300px] bg-white md:rounded-b-2xl  text-pur-900 w-full px-10  transition-all duration-700`}
         >
-          <NavLink to="/" className="navLink">
-            الرئيسية
-          </NavLink>
-          <NavLink to="/عن-النادي" className="navLink">
-            عن النادي
-          </NavLink>
-          <NavLink to="/الانشطة-الرياضية" className="navLink">
-            الانشطة الرياضية
-          </NavLink>
-          <NavLink to="/تواصل-معنا" className="navLink">
-            تواصل معنا
-          </NavLink>
+          {siteConfig.mainNav.map((n, i) => (
+            <NavLink key={i} to={n.href} className="navLink mx-[20px] ">
+              {n.title}
+            </NavLink>
+          ))}
         </nav>
       </div>
     </header>
